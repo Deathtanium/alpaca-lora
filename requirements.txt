@@ -4,7 +4,7 @@ loralib
 bitsandbytes
 black
 black[jupyter]
-datasets
+git+https://github.com/Deathtanium/datasets.git
 fire
 git+https://github.com/huggingface/peft.git
 transformers>=4.28.0
