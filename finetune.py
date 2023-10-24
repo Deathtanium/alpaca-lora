@@ -118,6 +118,14 @@ def train(
 
     tokenizer = LlamaTokenizer.from_pretrained(base_model)
 
+    from peft.peft_model import PeftModel
+
+    model = PeftModel.from_pretrained(
+        model,
+        './lora-intermediate',
+        torch_dtype=torch.float16
+    )
+
     tokenizer.pad_token_id = (
         0  # unk. we want this to be different from the eos token
     )
